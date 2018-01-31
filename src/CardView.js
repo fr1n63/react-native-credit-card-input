@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import {
   View,
-  ImageBackground,
   Image,
   Text,
   StyleSheet,
@@ -133,7 +132,7 @@ export default class CardView extends Component {
           perspective={2000}
           clickable={false}
           flip={shouldFlip}>
-          <ImageBackground style={[BASE_SIZE, s.cardFace, transform]}
+          <Image style={[BASE_SIZE, s.cardFace, transform]}
             source={imageFront}>
               <Image style={[s.icon]}
                 source={Icons[brand]} />
@@ -154,13 +153,13 @@ export default class CardView extends Component {
                   <Text style={[s.baseText, { fontFamily }, s.amexCVC, !cvc && s.placeholder, focused === "cvc" && s.focused]}>
                     { !cvc ? placeholder.cvc : cvc }
                   </Text> }
-          </ImageBackground>
-          <ImageBackground style={[BASE_SIZE, s.cardFace, transform]}
+          </Image>
+          <Image style={[BASE_SIZE, s.cardFace, transform]}
             source={imageBack}>
               <Text style={[s.baseText, s.cvc, !cvc && s.placeholder, focused === "cvc" && s.focused]}>
                 { !cvc ? placeholder.cvc : cvc }
               </Text>
-          </ImageBackground>
+          </Image>
         </FlipCard>
       </View>
     );
